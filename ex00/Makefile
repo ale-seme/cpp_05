@@ -4,7 +4,7 @@ CC = g++
 
 INCLUDES = -I./include
 
-SRC =  main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC =  main.cpp Bureaucrat.cpp
 
 CFLAGS = -Wall -Werror -Wextra -std=c++11 -fsanitize=address
 
