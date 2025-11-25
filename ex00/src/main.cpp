@@ -81,10 +81,15 @@ int main () {
     std::cout << "TESTING EXCEPTIONS IN METHODS" << std::endl;
     std::cout << "================================================" << std::endl;
 
+    Bureaucrat b8("Carlos", 150);
+    Bureaucrat b9("Carlitos", 1);
+
+    std::cout << "\n";
+
     try {
-        std::cout << "Test 4: Decrementing grade 150 (too low)" << std::endl;
-        Bureaucrat b8("Carlos", 150);
-        std::cout << "Before: " << b8 << std::endl;
+        std::cout << "Test 4:" << std::endl;
+        std::cout << "Before: " << b8 << std::endl<< "\n";
+        std::cout << "Decrementing grade 150 (too low)" << std::endl;
         b8.decrementGrade();
         std::cout << "After: " << b8 << std::endl;
     }
@@ -93,9 +98,9 @@ int main () {
     }
 
     try {
-        std::cout << "\nTest 5: Increment grade 1" << std::endl;
-        Bureaucrat b9("Carlitos", 1);
+        std::cout << "\nTest 5" << std::endl;
         std::cout << "Before: " << b9 << std::endl;
+        std::cout << "Increment grade 1" << std::endl;
         b9.incrementGrade();
         std::cout << "After: " << b9 << std::endl;
     }
