@@ -29,7 +29,7 @@ class Form {
 
 };
 
-std::ostream& operator<<(std::ostream& out, const &Form);
+std::ostream& operator<<(std::ostream& out, const Form& f);
 
 
 #endif
