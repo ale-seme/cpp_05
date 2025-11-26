@@ -1,14 +1,15 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include "Bureaucrat.hpp"
 #include <iostream>
 
 
 class Form {
 
     private:
-        std::string _name;
-        bool _singed;
+        std::string const _name;
+        bool _signed;
         const int _gradeToSign;
         const int _gradeToExecute;
 
@@ -19,12 +20,33 @@ class Form {
         Form& operator=(const Form &other);
         ~Form();
 
-        class GradeTooHighException : public std::exception {
-            const char* what() const noexcept override;
+        const std::string getName() const;
+        bool isSigned() const;
+        int gradeToSign() const;
+        int gradeToExecute() const;
 
+        void beSigned(const Bureaucrat& b);
+        
+        class GradeTooHighException : public std::exception {
+            public:
+                GradeTooHighException(const std::string &msg);
+                const char* what() const noexcept override;
+            private:
+                std::string _errorMessage;
         };
         class GradeTooLowException : public std::exception {
-            const char* what() const noexcept override;
+            public:
+                GradeTooLowException(const std::string &msg);
+                const char* what() const noexcept override;
+            private:
+                std::string _errorMessage;
+        };
+        class FormAlreadySignedException : public std::exception {
+            public:
+                FormAlreadySignedException(const std::string &msg);
+                const char* what() const noexcept override;
+            private:
+                std::string _errorMessage;
         };
 
 };

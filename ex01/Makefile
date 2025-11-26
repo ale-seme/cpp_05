@@ -4,7 +4,7 @@ CC = g++
 
 INCLUDES = -I./include
 
-SRC =  main.cpp Bureaucrat.cp
+SRC =  main.cpp Bureaucrat.cpp Form.cpp
 
 CFLAGS = -Wall -Werror -Wextra -std=c++11 -fsanitize=address
 
